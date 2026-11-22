@@ -26,14 +26,15 @@ Non-goals: a joystick report (ZMK has none); voice input (waits on the microphon
 ## The layout
 
 ```
-Y        left click                                   (unchanged)
-X        right click                                  (unchanged)
+Trackpad press  left click
+R        right click
 A        next waiting agent
 B  tap   tmux prefix, Ctrl+Space
    hold  tab layer:  D-pad ← →  tmux previous / next window   (prefix, p / n)
                      D-pad ↑ ↓  kitty previous / next tab     (ctrl+shift+← / →, kitty's defaults)
-R  tap   screenshot into the Mac's Claude
+X  tap   screenshot into the Mac's Claude
    hold  screenshot to the uConsole's clipboard
+Y        reserved for hold-to-talk (sends F17 = XF86Launch8, unbound)
 Start    Super (hold, e.g. Super+Return opens a terminal); play/pause moves to LFn+Start
 Select   Caps Lock, unchanged: the trackpad scrolls while it is on
 Shift    both one-shot (`&sk`): a tap capitalises the next key, a hold is a normal Shift
@@ -81,3 +82,10 @@ pass.
 - Hold-tap timing for B and R (start from ZMK's `hold-preferred`, 200 ms).
 - Whether this fork's backlight behaviour supports `BL_CYCLE` or needs `BL_INC`.
 - Confirm with `wev` that A and R arrive as `XF86Launch5`–`7` before binding them.
+
+## Revision — 22-11-2026, after the first flash
+
+The trackpad press had never clicked: its switch seated on first use, stuck closed once, then
+clicked cleanly. Gati chose it as left click, with R back as right click, so the face buttons
+carry the jobs: X takes the screenshot, Y is reserved. A stuck pad has no backup left click;
+a firm press on the pad frees it.
