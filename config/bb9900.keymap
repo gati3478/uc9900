@@ -43,10 +43,11 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <200>;
+            // Only a D-pad key (positions 0 5 6 7) makes B the layer; any other key, or B
+            // released alone, is the prefix. The long term stops a timeout from deciding
+            // "layer" while B is held, which would let "hold B, then c" type a bare c.
+            tapping-term-ms = <30000>;
             bindings = <&mo>, <&kp>;
-            // Only a D-pad key (positions 0 5 6 7) makes B the layer; any other key keeps
-            // it the prefix, so a fast "B, c" still reaches tmux.
             hold-trigger-key-positions = <0 5 6 7>;
         };
         shot: screenshot_hold_tap {
