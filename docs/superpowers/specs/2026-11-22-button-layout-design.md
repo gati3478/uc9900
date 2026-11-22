@@ -54,8 +54,8 @@ RFn+LFn reset stay.
 button ─▶ ZMK
             ├─ B layer, Start, Shift, backlight: plain keys, done in firmware
             ├─ A        ─▶ F14 = XF86Launch5 ─▶ kitty mapping sends tmux's "next waiting" key ─▶ tmux (Mac)
-            └─ R tap    ─▶ F15 = XF86Launch6 ─▶ labwc ─▶ script: slurp → grim → scp to mac → wtype the path
-               R hold   ─▶ F16 = XF86Launch7 ─▶ labwc ─▶ slurp → grim → wl-copy
+            └─ X tap    ─▶ F15 = XF86Launch6 ─▶ labwc ─▶ script: slurp → grim → scp to mac → wtype the path
+               X hold   ─▶ F16 = XF86Launch7 ─▶ labwc ─▶ slurp → grim → wl-copy
 
 F14–F16 because xkb's evdev rules (`symbols/inet`) turn them into launch keys nothing binds,
 while F21–F23 become `XF86TouchpadToggle/On/Off`, which a desktop may act on.
@@ -64,7 +64,7 @@ while F21–F23 become `XF86TouchpadToggle/On/Off`, which a desktop may act on.
 - **A does nothing until the Mac's tmux has a "next waiting" binding.** That binding, and the
   Claude Code hooks that flag a waiting window, belong to the tmux work (the Scratchpad's tmux
   prompt, item 3). Only then does kitty get its `map f21`. No stopgap job in between.
-- **R tap:** an image cannot cross ssh's clipboard (OSC 52 carries text), so the shot is copied
+- **X tap:** an image cannot cross ssh's clipboard (OSC 52 carries text), so the shot is copied
   to the Mac at `/tmp/uconsole-shots/` and its path is typed at the cursor; Claude Code reads an
   image path as an image. Esc in slurp cancels and types nothing. Needs `wtype` (apt).
 - The script lives in `uconsole-repo/bin/` beside `console`, deployed to `~/.local/bin`.
@@ -79,9 +79,9 @@ pass.
 
 ## Left to the builder
 
-- Hold-tap timing for B and R (start from ZMK's `hold-preferred`, 200 ms).
+- Hold-tap timing for B and X: B decides only on a D-pad press (30 s term), X at 300 ms.
 - Whether this fork's backlight behaviour supports `BL_CYCLE` or needs `BL_INC`.
-- Confirm with `wev` that A and R arrive as `XF86Launch5`–`7` before binding them.
+- Confirm with `wev` that A and X arrive as `XF86Launch5`–`7` before binding them.
 
 ## Revision — 22-11-2026, after the first flash
 
