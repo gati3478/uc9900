@@ -27,7 +27,7 @@ Non-goals: a joystick report (ZMK has none); voice input (waits on the microphon
 
 ```
 Trackpad press  left click
-R        right click
+R        right click; LFn+R or RFn+R = left click, the backup should the pad stop clicking
 A        next waiting agent
 B  tap   tmux prefix, Ctrl+Space
    hold  tab layer:  D-pad ← →  tmux previous / next window   (prefix, p / n)
