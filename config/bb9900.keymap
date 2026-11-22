@@ -85,10 +85,10 @@
 // |  LShift  |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  <  |  >  |  ;  |  RShift  |  
 //        |  Fn  |  LCtrl  |  Alt   |      SPACE      |   Alt   |  RCtrl   |  Fn   |  
 //        -----------------------------------------------------------------------------------------------------------------
-// The front plate holds this unit's left mouse button (Mleft) closed, so it sends nothing;
-// the trackpad press and Y click left, X clicks right. A and R send F14-F16: xkb turns those
+// The front plate holds this unit's left mouse button (Mleft) closed, and the trackpad press
+// stays closed once pressed (22-11-2026), so both send nothing; Y clicks left, X right. A and R send F14-F16: xkb turns those
 // into XF86Launch5-7, which nothing binds (F21-F23 become touchpad toggles).
-            &kp LEFT                      &none             &mkp LCLK      &mkp LCLK &mkp RCLK
+            &kp LEFT                      &none             &none          &mkp LCLK &mkp RCLK
 &kp UP   &kp DOWN &kp RIGHT               &shot F16 F15                   &lt_hp TABS LC(SPACE)      &kp F14
 &kp ESC    &kp CAPS  &kp LGUI &kp K_MUTE    &kp LBKT   &kp RBKT   &kp FSLH   &kp MINUS  &kp  EQUAL &kp BACKSLASH                                                                                  
 &kp GRAVE  &kp N1        &kp N2     &kp N3   &kp N4     &kp N5     &kp N6     &kp N7     &kp N8    &kp N9  &kp N0 &kp BSPC
